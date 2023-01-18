@@ -45,10 +45,7 @@
     --color-text-title: #85092C;
 }
 
-h1{
-    font-family: 'qatar2022_arabicheavy';
-    font-weight: normal;
-    font-style: normal;
-    color: #85092C;
+a:hover{
+    opacity: 0.8;
 }
 
