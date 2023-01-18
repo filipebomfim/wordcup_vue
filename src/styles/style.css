@@ -27,7 +27,6 @@
     font-style: normal;
 }
 
-
 @font-face {
     font-family: 'qatar2022_arabicbold';
     src: url('../assets/fonts/qatar2022arabic-bold-webfont.woff2') format('woff2'),
@@ -36,13 +35,21 @@
     font-style: normal;
 }
 
-
 :root {
     --color-background-main:#F3F3F3;
-    --color-background-sec:#85092C;
+    --color-background-sec:#C40E41;;
     --color-background-nav: #380413; 
     --color-text-light: #EDEDED;
     --color-text-title: #85092C;
+    --color-background-button: #790928;
+}
+
+a{
+    text-decoration: none;
+    font-family: 'qatar2022_arabicheavy' !important;
+    font-weight: normal !important;
+    font-style: normal !important;
+    color: var(--color-text-light);
 }
 
 a:hover{

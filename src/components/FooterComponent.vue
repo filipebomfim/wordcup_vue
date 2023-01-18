@@ -15,14 +15,10 @@
 <style scoped>
     footer{
         background-color: var(--color-background-nav) !important;
-        padding: 20px 0;
+        padding: 5px 0;
     }
 
     a{
-        text-decoration: none;
-        font-family: 'qatar2022_arabicheavy';
-        font-weight: normal;
-        font-style: normal;
-        color: var(--color-text-light);
+        font-size: 14px;
     }
 </style>

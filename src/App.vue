@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <NavComponent/>
+    <Home/>
     <FooterComponent/>
   </div>
 </template>
@@ -10,6 +11,7 @@
   import api from '@/services/api.js'
   import NavComponent from './components/NavComponent'
   import FooterComponent from './components/FooterComponent'
+  import Home from './pages/Home'
 
   export default {
     name: 'App',
@@ -25,7 +27,7 @@
             })
     },
     components: {
-      NavComponent,FooterComponent
+      NavComponent,FooterComponent,Home
     }
 }
 </script>
