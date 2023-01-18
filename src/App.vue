@@ -1,26 +1,30 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div id="app" class="container">
+    <h1>World Cup 2022</h1>
+    <img src="../src/assets/img/logo.png" alt="">
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+  import './styles/style.css'
+  import api from '@/services/api.js'
 
-export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
+  export default {
+    name: 'App',
+    data(){
+      return{
+        competitions:[]
+      }
+    },
+    mounted(){
+      api.get('/standings').then(response =>{
+                this.competitions = response.data
+                console.log(this.competitions.standings)
+            })
+    },
+    components: {
+      
+    }
 }
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>

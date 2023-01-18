@@ -1,0 +1,54 @@
+/* Color Theme Swatches in Hex */
+.Copa-do-Mundo-1-hex { color: #380413; }
+.Copa-do-Mundo-2-hex { color: #C40E41; }
+.Copa-do-Mundo-3-hex { color: #790928; }
+.Copa-do-Mundo-4-hex { color: #85092C; }
+.Copa-do-Mundo-5-hex { color: #5E071F; }
+
+/* Color Theme Swatches in RGBA */
+.Copa-do-Mundo-1-rgba { color: rgba(56, 4, 18, 1); }
+.Copa-do-Mundo-2-rgba { color: rgba(195, 14, 65, 1); }
+.Copa-do-Mundo-3-rgba { color: rgba(121, 8, 40, 1); }
+.Copa-do-Mundo-4-rgba { color: rgba(133, 8, 43, 1); }
+.Copa-do-Mundo-5-rgba { color: rgba(93, 7, 31, 1); }
+
+/* Color Theme Swatches in HSLA */
+.Copa-do-Mundo-1-hsla { color: hsla(0, 86, 11, 1); }
+.Copa-do-Mundo-2-hsla { color: hsla(0, 86, 41, 1); }
+.Copa-do-Mundo-3-hsla { color: hsla(0, 86, 25, 1); }
+.Copa-do-Mundo-4-hsla { color: hsla(0, 87, 27, 1); }
+.Copa-do-Mundo-5-hsla { color: hsla(0, 86, 19, 1); }
+
+@font-face {
+    font-family: 'qatar2022_arabicheavy';
+    src: url('../assets/fonts/qatar2022arabic-heavy-webfont.woff2') format('woff2'),
+         url('../assets/fonts/qatar2022arabic-heavy-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'qatar2022_arabicbold';
+    src: url('../assets/fonts/qatar2022arabic-bold-webfont.woff2') format('woff2'),
+         url('../assets/fonts/qatar2022arabic-bold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+:root {
+    --color-background-main:#F3F3F3;
+    --color-background-sec:#85092C;
+    --color-background-nav: #380413; 
+    --color-text-light: #EDEDED;
+    --color-text-title: #85092C;
+}
+
+h1{
+    font-family: 'qatar2022_arabicheavy';
+    font-weight: normal;
+    font-style: normal;
+    color: #85092C;
+}
+
