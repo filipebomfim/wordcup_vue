@@ -37,12 +37,46 @@
 
 :root {
     --color-background-main:#F3F3F3;
-    --color-background-sec:#C40E41;;
+    --color-background-sec:#85092C;
     --color-background-nav: #380413; 
     --color-text-light: #EDEDED;
     --color-text-title: #85092C;
     --color-background-button: #790928;
 }
+
+
+
+html,body{
+    font-family: 'qatar2022_arabicbold' !important;
+    font-weight: normal !important;
+    font-style: normal !important;
+    background-color: var(--color-background-sec);
+}
+.page{
+    width: 100%;
+    height: 100%;    
+}
+
+.page-content{
+    width: 90%;
+    height: 100%;
+    margin-top: 100px ;
+    margin-bottom: 30px;
+}
+
+
+.page-title{
+    position: relative;
+    top: 60px;
+    width: 100%;
+    background-color: rgba(255, 255, 255, .9);
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--color-text-title);
+}
+
 
 a{
     text-decoration: none;
@@ -53,6 +87,8 @@ a{
 }
 
 a:hover{
-    opacity: 0.8;
+    opacity: 0.8 !important;
 }
+
+
 

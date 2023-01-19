@@ -32,7 +32,7 @@
     }
 
 
-    a{
+    a, a:hover{
         background-color: var(--color-background-button);
         border: 0;
     }

@@ -11,10 +11,10 @@
             <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        <a class="nav-link active" aria-current="page" href="/">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Group Stage</a>
+                        <a class="nav-link" href="/group_stage">Group Stage</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Playoffs</a>
@@ -40,6 +40,7 @@
 <style scoped>
     nav{
         background-color: var(--color-background-nav) !important;
+        height: 60px !important;
     }
 
     .navbar-toggler{

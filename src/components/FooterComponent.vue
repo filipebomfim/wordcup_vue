@@ -16,6 +16,7 @@
     footer{
         background-color: var(--color-background-nav) !important;
         padding: 5px 0;
+        height: 30px !important;
     }
 
     a{
