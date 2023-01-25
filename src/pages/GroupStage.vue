@@ -6,30 +6,64 @@
         </div>
         <div class="container-fluid page-content mx-auto">
             <div class="row">
-                <CardGroupComponent v-for="(group,index) in groups" :key="index" :groupTeams="group">
-                </CardGroupComponent>                  
+                <div class="col-md-3 col-sm-6 px-0" v-for="(group,index) in groups" :key="index" >
+                    <CardComponent :title="group.group.replace('_',' ')" >
+                        <template v-slot:header>
+                            <a href="#" v-on:click="getGroupMatches(group.group)" data-bs-toggle="modal" data-bs-target="#modal"><i class="bi bi-calendar2-range"></i></a>
+                        </template>
+                        <template v-slot:content>
+                            <TableComponent :columns="tableColumns" :data="group.table" :keys="keys"></TableComponent>
+                        </template>
+                    </CardComponent> 
+                </div> 
+
+                <ModalComponent :title="'Matches from '+groupMatchName">
+                    <template v-slot:content>
+                        {{ this.groupMatches }}
+                    </template>
+                </ModalComponent>
             </div>
         </div>
     </div>
 </template>
 
 <script>
-    import CardGroupComponent from '../components/CardGroupComponent'
+    import CardComponent from '@/components/CardComponent'
+    import TableComponent from '@/components/TableComponent'
+    import ModalComponent from '@/components/ModalComponent'
     import api from '@/services/api.js'
 
     export default{
     name: "GroupStage",
-    components: { CardGroupComponent },
+    components: { CardComponent, TableComponent, ModalComponent },
     data(){
       return{
-        groups:[]
+        groups:[],
+        matches:[],
+        groupMatches:[],
+        groupMatchName:'',
+        tableColumns:['POS','TEAM','PTS','WIN','DRAW','LOS','GOAL SCORED','GOAL AGAINST','GOAL DIFF'],
+        keys:['position','team','points','won','draw','lost','goalsFor','goalsAgainst','goalDifference']
       }
     },
-    mounted(){
-      api.get('/standings').then(response =>{
-                this.groups = response.data.standings
+    methods:{
+        getGroupMatches(group){
+            this.groupMatchName = group.replace('_',' ')
+            this.groupMatches = this.matches.filter((match)=>{
+                return match.group == group
             })
+        }
     },
+    mounted(){
+        api.get('/standings').then(response =>{
+            this.groups = response.data.standings
+        })
+
+        api.get('/matches',{params:{stage:'GROUP_STAGE'}}).then(response =>{
+            //console.log(response.data.matches)
+            this.matches = response.data.matches
+        })               
+    }
 
 }
 </script>
