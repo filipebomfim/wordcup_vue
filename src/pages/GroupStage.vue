@@ -19,7 +19,7 @@
 
                 <ModalComponent :title="'Matches from '+groupMatchName">
                     <template v-slot:content>
-                        {{ this.groupMatches }}
+                        <MatchesComponent :matches="groupMatches"></MatchesComponent>
                     </template>
                 </ModalComponent>
             </div>
@@ -31,11 +31,12 @@
     import CardComponent from '@/components/CardComponent'
     import TableComponent from '@/components/TableComponent'
     import ModalComponent from '@/components/ModalComponent'
+    import MatchesComponent from '@/components/MatchesComponent'
     import api from '@/services/api.js'
 
     export default{
     name: "GroupStage",
-    components: { CardComponent, TableComponent, ModalComponent },
+    components: { CardComponent, TableComponent, ModalComponent,MatchesComponent },
     data(){
       return{
         groups:[],

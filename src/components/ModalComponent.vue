@@ -30,5 +30,9 @@
 </script>
 
 <style scoped>
-
+   .modal-header{
+        background-color: #85092C;
+        color: var(--color-text-light);
+        text-align: center;
+    }
 </style>
