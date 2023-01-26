@@ -90,5 +90,10 @@ a:hover{
     opacity: 0.8 !important;
 }
 
+.penalties-match{
+    color: gray;
+    font-size: 14px;
+}
+
 
 

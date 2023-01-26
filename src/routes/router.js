@@ -1,5 +1,6 @@
 import * as VueRouter from 'vue-router';
 import Home from '../pages/Home'
+import Teams from '../pages/Teams'
 import GroupStage from '../pages/GroupStage'
 
 const routes = [
@@ -11,6 +12,10 @@ const routes = [
         path:'/group_stage',
         component:GroupStage
     },
+    {
+        path:'/teams',
+        component: Teams
+    }
 ];
 
 const router = VueRouter.createRouter({

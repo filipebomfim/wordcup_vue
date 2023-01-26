@@ -1,9 +1,6 @@
 <template>
     <div class="page">
-        <div class="page-title">
-            <img src="../assets/img/logo.png" alt="Logo" height="64" width="64">
-            <h1>Group Stage</h1>
-        </div>
+        <PageTitleComponent :title="'Group Stage'"></PageTitleComponent>
         <div class="container-fluid page-content mx-auto">
             <div class="row">
                 <div class="col-md-3 col-sm-6 px-0" v-for="(group,index) in groups" :key="index" >
@@ -28,6 +25,7 @@
 </template>
 
 <script>
+    import PageTitleComponent from '@/components/PageTitleComponent'
     import CardComponent from '@/components/CardComponent'
     import TableComponent from '@/components/TableComponent'
     import ModalComponent from '@/components/ModalComponent'
@@ -36,7 +34,7 @@
 
     export default{
     name: "GroupStage",
-    components: { CardComponent, TableComponent, ModalComponent,MatchesComponent },
+    components: { PageTitleComponent, CardComponent, TableComponent, ModalComponent,MatchesComponent },
     data(){
       return{
         groups:[],
@@ -61,7 +59,6 @@
         })
 
         api.get('/matches',{params:{stage:'GROUP_STAGE'}}).then(response =>{
-            //console.log(response.data.matches)
             this.matches = response.data.matches
         })               
     }

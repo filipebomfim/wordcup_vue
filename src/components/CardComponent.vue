@@ -4,7 +4,7 @@
                 {{ title }}
                 <slot name="header"></slot>
             </div>
-            <div class="card-body">
+            <div class="card-body overflow-auto">
                 <slot name="content"></slot>
             </div>
             <div class="card-footer">
@@ -22,8 +22,7 @@
         },
         mounted(){
             //console.log(this.matchesGroups)
-        }
-
+        },
         
     }
 </script>
@@ -32,6 +31,7 @@
     .card{
         border: 5px solid #85092C;
         border-radius: 20px;
+        max-height: 500px;
     }
     .card-header{
         background-color: #85092C;
