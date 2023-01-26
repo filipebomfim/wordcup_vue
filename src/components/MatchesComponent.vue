@@ -4,7 +4,7 @@
                 <tbody class="table-group-divider" v-for="(match,index) in matches" :key="index">
                     <tr class="matchStage my-5" v-if="matchesStage != match.stage">
                         <td colspan="12" class="text-center" :stage="setStage(match.stage)">
-                            {{ match.stage }}
+                            {{ match.stage.replace('_',' ') }}
                         </td>                            
                     </tr>
                     <tr class="matchDate my-5" v-if="matchesDate != getDate(match.utcDate)">
