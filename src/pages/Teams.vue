@@ -68,7 +68,7 @@
             api.get('/matches').then(response =>{
                 this.matches = response.data.matches;
             });
-        }
+        },
     }
 </script>
 

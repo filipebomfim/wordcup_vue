@@ -2,8 +2,8 @@
     <div class="table-responsive">
         <table class="table table-borderless table-sm ">
                 <tbody class="table-group-divider" v-for="(match,index) in matches" :key="index">
-                    <tr class="matchStage my-5" v-if="matchesStage != match.stage">
-                        <td colspan="12" class="text-center" :stage="setStage(match.stage)">
+                    <tr class="matchStage my-5" v-if="matchesStage != match.stage" :changeStage= setStage(match.stage)>
+                        <td id="stage" colspan="12" class="text-center">
                             {{ match.stage.replace('_',' ') }}
                         </td>                            
                     </tr>
@@ -13,23 +13,22 @@
                         </td>                            
                     </tr>
                     <tr class="text-center">
-                        
-                        <td>{{ getHour(match.utcDate) }}</td>
-                        <td>{{ match.homeTeam.name }}</td>
+                        <td >{{ getHour(match.utcDate) }}</td>
+                        <td >{{ match.homeTeam.name }}</td>
                         <td v-if="match.score.duration == 'PENALTY_SHOOTOUT'">
                             {{ getResultFullTimeHome(match.score) }}
                         </td>
                         <td v-else>
                             {{ match.score.fullTime.homeTeam }}
                         </td>
-                        <td>X</td>
+                        <td >X</td>
                         <td v-if="match.score.duration == 'PENALTY_SHOOTOUT'">
                             {{ getResultFullTimeAway(match.score) }}
                         </td>
                         <td v-else>
                             {{ match.score.fullTime.awayTeam }}
                         </td>
-                        <td>{{ match.awayTeam.name }}</td>
+                        <td >{{ match.awayTeam.name }}</td>
                     </tr>                
                     <tr class="text-center penalties-match" v-show="match.score.duration == 'PENALTY_SHOOTOUT'">
                         <td colspan="2">Extra Time</td>
@@ -55,7 +54,7 @@
         data(){
             return{
                 matchesDate:'',
-                matchesStage:'',
+                matchesStage:'GROUP_STAGE',
             }
         },
         mounted(){
@@ -74,7 +73,8 @@
             },
             setStage(stage){
                 this.matchesStage = stage; 
-                //console.log(stage)            
+                //this.matchesStage = this.$el.querySelector("#stage").innerText
+                           
             },
             getResultFullTimeHome(score){
                 return score.fullTime.homeTeam - score.extraTime.homeTeam - score.penalties.homeTeam;
@@ -82,7 +82,7 @@
             getResultFullTimeAway(score){
                 return score.fullTime.awayTeam - score.extraTime.awayTeam - score.penalties.awayTeam;
             }
-        },
+        }
     }
 </script>
 

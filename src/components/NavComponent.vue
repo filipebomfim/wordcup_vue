@@ -20,13 +20,10 @@
                         <a class="nav-link" href="/group_stage">Group Stage</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Playoffs</a>
+                        <a class="nav-link" href="/playoffs">Playoffs</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Statistics</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">WC FIFA</a>
+                        <a class="nav-link" href="/wc-fifa">WC FIFA</a>
                     </li>
                 </ul>
             </div>
