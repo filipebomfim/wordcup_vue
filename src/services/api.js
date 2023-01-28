@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const api = axios.create({
-    baseURL:'https://api.football-data.org/v2/competitions/WC',
+    baseURL:'https://api.football-data.org/v4/competitions/WC',
     headers:{
         'X-Auth-Token':'5afa385de30b461787b50e1341ef0a2c'
     }

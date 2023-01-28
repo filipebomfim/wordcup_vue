@@ -21,7 +21,7 @@
                                     Champion
                                 </span>
                                 <div class="d-flex align-items-center">
-                                    <img class="me-2" :src="season.winner.crestUrl" alt="Logo" width="24" height="24">
+                                    <img class="me-2" :src="season.winner.crest" alt="Logo" width="24" height="24">
                                     {{season.winner.name}} 
                                 </div>                                  
                             </div>
