@@ -3,10 +3,10 @@
         <PageTitleComponent :title="'Group Stage'"></PageTitleComponent>
         <div class="container-fluid page-content mx-auto">
             <div class="row">
-                <div class="col-md-3 col-sm-6 px-0" v-for="(group,index) in groups" :key="index" >
+                <div class="col-xl-3 col-md-6 col-12 px-0" v-for="(group,index) in groups" :key="index" >
                     <CardComponent :title="group.group.replace('_',' ')" >
                         <template v-slot:header>
-                            <a href="#" v-on:click="getGroupMatches(group.group)" data-bs-toggle="modal" data-bs-target="#modal"><i class="bi bi-calendar2-range"></i></a>
+                            <a href="#" v-on:click="setGroupMatches(group.group)" data-bs-toggle="modal" data-bs-target="#modal"><i class="bi bi-calendar2-range"></i></a>
                         </template>
                         <template v-slot:content>
                             <TableComponent :columns="tableColumns" :data="group.table" :keys="keys"></TableComponent>
@@ -14,7 +14,7 @@
                     </CardComponent> 
                 </div> 
 
-                <ModalComponent :title="'Matches from '+groupMatchName">
+                <ModalComponent :title="'Matches from '+groupMatchName.replace('_',' ')">
                     <template v-slot:content>
                         <MatchesComponent :matches="groupMatches"></MatchesComponent>
                     </template>
@@ -45,10 +45,18 @@
         keys:['position','team','points','won','draw','lost','goalsFor','goalsAgainst','goalDifference']
       }
     },
+    watch:{
+        groupMatchName(){
+            this.groupMatches = this.getGroupMatches(this.groupMatchName)
+            console.log(this.groupMatches)
+        }
+    },
     methods:{
+        setGroupMatches(group){
+            this.groupMatchName = group            
+        },
         getGroupMatches(group){
-            this.groupMatchName = group.replace('_',' ')
-            this.groupMatches = this.matches.filter((match)=>{
+            return this.matches.filter((match)=>{
                 return match.group == group
             })
         }

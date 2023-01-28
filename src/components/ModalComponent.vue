@@ -35,4 +35,12 @@
         color: var(--color-text-light);
         text-align: center;
     }
+
+    .modal-body{
+        background-color: var(--color-background-1);
+    }
+
+    .modal-footer{
+        background-color: var(--color-background-2);
+    }
 </style>

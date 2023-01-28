@@ -10,7 +10,7 @@
                 <tr class="text-center" v-for="obj in data" :key="obj.id">
                     <td v-for="(value,index) in keys" :key="index">
                         <span v-if="value=='team'" class="d-flex nowrap text-highlight">
-                            <img class="me-2" :src="obj.team.crestUrl" alt="Logo" width="24" height="24">
+                            <img class="me-2" :src="obj.team.crest" alt="Logo" width="24" height="24">
                             {{ obj.team.name }}
                         </span>    
                         <span v-else>

@@ -14,7 +14,7 @@
 
 <style scoped>
     footer{
-        background-color: var(--color-background-nav) !important;
+        background-color: var(--color-background-3) !important;
         padding: 5px 0;
         height: 30px !important;
     }
