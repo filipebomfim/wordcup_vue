@@ -36,21 +36,28 @@
 }
 
 :root {
-    --color-background-main:#F3F3F3;
-    --color-background-sec:#85092C;
-    --color-background-nav: #380413; 
+    --color-background-1:#F3F3F3;
+    --color-background-2:#85092C;
+    --color-background-3: #380413; 
+    --color-background-4: #C40E41;
     --color-text-light: #EDEDED;
     --color-text-title: #85092C;
     --color-background-button: #790928;
+    --font-main: 'qatar2022_arabicbold';
+    --font-sec: 'qatar2022_arabicheavy';
+    --font-size-title: 1.2em;
+    --font-size-text: 1em;
+    --font-size-big-text: 1.5em;
 }
 
 
 
 html,body{
-    font-family: 'qatar2022_arabicbold' !important;
+    font-family: var(--font-main) !important;
     font-weight: normal !important;
     font-style: normal !important;
-    background-color: var(--color-background-sec);
+    background-color: var(--color-background-2);
+    font-size: var(--font-size-text);
 }
 .page{
     width: 100%;

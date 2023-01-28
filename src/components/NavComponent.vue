@@ -39,7 +39,7 @@
 
 <style scoped>
     nav{
-        background-color: var(--color-background-nav) !important;
+        background-color: var(--color-background-3) !important;
         height: 60px !important;
     }
 

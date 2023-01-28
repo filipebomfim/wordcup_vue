@@ -1,10 +1,10 @@
 <template>
-        <div class="card">
+        <div class="card m-2">
             <div class="card-header d-flex justify-content-between align-items-center">
                 {{ title }}
                 <slot name="header"></slot>
             </div>
-            <div class="card-body overflow-auto">
+            <div class="card-body px-0">
                 <slot name="content"></slot>
             </div>
             <div class="card-footer">
@@ -29,20 +29,25 @@
 
 <style scoped>
     .card{
-        border: 5px solid #85092C;
-        border-radius: 20px;
         max-height: 500px;
+        box-shadow: rgba(0, 0, 0, 0.7) 0px 5px 15px;
+        border: 0;
     }
-    .card-header{
-        background-color: #85092C;
-        border: 1px solid white;
-        border-top-left-radius: 20px;
-        border-top-right-radius: 20px;
-        color: var(--color-text-light);
-        font-family: 'qatar2022_arabicheavy' !important;
-        font-weight: normal !important;
-        font-style: normal !important;
-        text-align: center;
-    }
+   .card-header{
+        background-color: var(--color-background-2);
+        color: white;
+        font-size: 1.2rem;
+        font-family: var(--font-sec);
+   }
+
+   .card-body{
+        background-color: var(--color-background-1);
+   }
+
+   .card-footer{
+        background-color: var(--color-background-2);
+   }
+
+
 
 </style>
