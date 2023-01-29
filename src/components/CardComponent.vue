@@ -1,10 +1,10 @@
 <template>
-        <div class="card m-2">
+        <div class="card m-2 ">
             <div class="card-header d-flex justify-content-between align-items-center">
                 {{ title }}
                 <slot name="header"></slot>
             </div>
-            <div class="card-body px-2 ">
+            <div class="card-body overflow-auto">
                 <slot name="content"></slot>
             </div>
             <div class="card-footer">

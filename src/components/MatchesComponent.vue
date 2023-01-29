@@ -1,8 +1,9 @@
 <template>
     <div class="table-responsive">
-        <table class="table table-borderless table-sm ">
+        <table class="table table-borderless table-sm">
                 <tbody class="table-group-divider" v-for="(match,index) in matches" :key="index">
-                    <tr class="matchStage my-5" v-if="matchesStage != match.stage" :changeStage= setStage(match.stage)>
+                    
+                    <tr class="matchStage" v-if="matchesStage != match.stage" :changeStage= setStage(match.stage)>
                         <td id="stage" colspan="12" class="text-center">
                             {{ match.stage.replace('_',' ') }}
                         </td> 
@@ -13,72 +14,70 @@
                         </td>                            
                     </tr>
                     <tr class="text-center">
-                        <td >{{ getHour(match.utcDate) }}</td>
-                        <td >
+                        <td class="team align-middle">
                             <span class="d-flex nowrap text-highlight">
-                            <img class="me-2" :src="match.homeTeam.crest" alt="Logo" width="24" height="24">
-                            {{ match.homeTeam.name }}
-                            </span> 
+                                    <img class="mx-3" :src="match.homeTeam.crest" alt="Logo" width="24" height="24">
+                                    <span>{{ match.homeTeam.name }}</span>
+                            </span>
                         </td>
-                        <td>
-                            {{ match.score.fullTime.home }}
+                        <td class="text-center ">
+                            <div class="d-flex justify-content-center align-middle">
+                                <span class="score">
+                                    {{ match.score.fullTime.home }}
+                                </span> 
+                                <span class="versus mx-3">X</span>
+                                <span class="score">
+                                    {{ match.score.fullTime.away }}
+                                </span> 
+                            </div>
                         </td>
-                        <td>X</td>
-                        <td>
-                            {{ match.score.fullTime.away }}
-                        </td>
-                        <td class="d-flex justify-content-end" >
-                            <span class="d-flex nowrap text-highlight">
-                            <img class="me-2" :src="match.awayTeam.crest" alt="Logo" width="24" height="24">
-                            {{ match.awayTeam.name }}
+                        <td class="team align-middle">
+                            <span class="d-flex nowrap text-highlight align-middle">
+                                    <img class="mx-3" :src="match.awayTeam.crest" alt="Logo" width="24" height="24">
+                                    <span>{{ match.awayTeam.name }}</span>
                             </span>
                         </td>
                     </tr>
-                </tbody>
-                <!-- 
-                <tbody class="table-group-divider" v-for="(match,index) in matches" :key="index">
-                    <tr class="matchStage my-5" v-if="matchesStage != match.stage" :changeStage= setStage(match.stage)>
-                        <td id="stage" colspan="12" class="text-center">
-                            {{ match.stage.replace('_',' ') }}
-                        </td>                            
+                    <tr class="text-center penalties-match" v-if="match.score.duration == 'PENALTY_SHOOTOUT'">
+                        <td class="align-middle">
+                            <span class="d-flex nowrap text-highlight">
+                                    <span>Regular Time</span>
+                            </span>
+                        </td>
+                        <td>
+                            <span>{{ match.score.regularTime.home }}</span> 
+                            <span class="mx-3">X</span>
+                            <span>{{ match.score.regularTime.away }}</span> 
+                        </td>
+                        <td class="align-middle"></td>
                     </tr>
-                    <tr class="matchDate my-5" v-if="matchesDate != getDate(match.utcDate)">
-                        <td colspan="12" class="text-center" :date="setDate(match.utcDate)">
-                            {{getDate(match.utcDate)}}  
-                        </td>                            
+                    <tr class="text-center penalties-match" v-if="match.score.duration == 'PENALTY_SHOOTOUT'">
+                        <td class="align-middle">
+                            <span class="d-flex nowrap text-highlight">
+                                    <span>Extra Time</span>
+                            </span>
+                        </td>
+                        <td>
+                            <span>{{ match.score.extraTime.home }}</span> 
+                            <span class="mx-3">X</span>
+                            <span>{{ match.score.extraTime.away }}</span> 
+                        </td>
+                        <td class="align-middle"></td>
                     </tr>
-                    <tr class="text-center">
-                        <td >{{ getHour(match.utcDate) }}</td>
-                        <td >{{ match.homeTeam.name }}</td>
-                        <td v-if="match.score.duration == 'PENALTY_SHOOTOUT'">
-                            {{ getResultFullTimeHome(match.score) }}
+                    <tr class="text-center penalties-match" v-if="match.score.duration == 'PENALTY_SHOOTOUT'">
+                        <td class="align-middle">
+                            <span class="d-flex nowrap text-highlight">
+                                    <span>Penalties</span>
+                            </span>
                         </td>
-                        <td v-else>
-                            {{ match.score.fullTime.home }}
+                        <td>
+                            <span>{{ match.score.penalties.home }}</span> 
+                            <span class="mx-3">X</span>
+                            <span>{{ match.score.penalties.away }}</span> 
                         </td>
-                        <td >X</td>
-                        <td v-if="match.score.duration == 'PENALTY_SHOOTOUT'">
-                            {{ getResultFullTimeAway(match.score) }}
-                        </td>
-                        <td v-else>
-                            {{ match.score.fullTime.away }}
-                        </td>
-                        <td >{{ match.awayTeam.name }}</td>
-                    </tr>                
-                    <tr class="text-center penalties-match" v-show="match.score.duration == 'PENALTY_SHOOTOUT'">
-                        <td colspan="2">Extra Time</td>
-                        <td>{{match.score.extraTime.home}}</td>
-                        <td>X</td>
-                        <td>{{match.score.extraTime.away}}</td>
-                    </tr>
-                    <tr class="text-center penalties-match" v-show="match.score.duration == 'PENALTY_SHOOTOUT'">
-                        <td colspan="2">Penalties</td>
-                        <td>{{match.score.penalties.home}}</td>
-                        <td>X</td>
-                        <td>{{match.score.penalties.away}}</td>
+                        <td class="align-middle"></td>
                     </tr>
                 </tbody>
-                 -->
         </table>
     </div>
 </template>
@@ -124,8 +123,8 @@
 
 <style scoped>
     .matchDate{
-        background-color: #85092C !important;
-        color: var(--color-text-light) !important;
+        background-color: var(--color-text-title);
+        color: var(--color-text-light) ;
     }
 
     .matchStage{
@@ -134,10 +133,27 @@
         font-family: 'qatar2022_arabicheavy';
     }
 
-    
-
-    table{
-        border-collapse: separate;
+    .team{
+        width: 180px;
     }
+
+    .team span span{
+        font-size: 1.1em;
+        color: var(--color-text-title);
+    }
+
+    .score{
+        font-size: 1.2em;
+        background-color: var(--color-text-title);
+        color: var(--color-text-light);
+        width: 40px;
+        border-radius: 20px;
+    }
+
+    .versus{
+        font-size: 1.2em;
+    }
+   
+
 
 </style>

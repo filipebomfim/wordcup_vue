@@ -3,19 +3,19 @@
         <PageTitleComponent :title="'Teams'"></PageTitleComponent>
         <div class="container-fluid page-content mx-auto">
             <div class="row d-flex justify-content-center align-items-center">
-                <div class="col-md-3">
+                <div class="col-xl-3 col-md-4">
                     <CardComponent :title="'World Cup Teams'">
                         <template v-slot:content>
                             <div class="row">
-                                <a class="col-md-6" href="#" v-for="(team,index) in teams" :key="index" v-on:click="setSelectedTeam(team)">
-                                    <img class="me-2" :src="team.crestUrl" alt="Logo" width="24" height="24">
+                                <a class="col-12" href="#" v-for="(team,index) in teams" :key="index" v-on:click="setSelectedTeam(team)">
+                                    <img class="me-2" :src="team.crest" alt="Logo" width="48" height="48">
                                     {{ team.name }}                                    
                                 </a>
                             </div>
                         </template>
                     </CardComponent>
                 </div>
-                <div class="col-md-4">
+                <div class="col-xl-6 col-md-8">
                     <CardComponent :title="selectedTeam.name ?? 'Select a Team'">
                         <template v-slot:content>
                             <img :src="selectedTeam.crestUrl ?? require('@/assets/img/logo.png')" class="rounded mx-auto d-block" alt="" width="150" height="150">
