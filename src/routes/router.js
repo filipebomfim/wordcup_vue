@@ -31,6 +31,8 @@ const routes = [
 const router = VueRouter.createRouter({
     history: VueRouter.createWebHistory(),
     routes,
+    linkActiveClass:'active',
+    linkExactActiveClass: 'exact-active-link',
 });
 
 export default router;

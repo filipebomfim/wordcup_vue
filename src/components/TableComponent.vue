@@ -46,4 +46,8 @@
     .nowrap {
         white-space:nowrap;
     }
+
+    table{
+        border-collapse: unset;
+    }
 </style>

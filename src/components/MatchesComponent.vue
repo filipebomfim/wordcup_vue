@@ -1,8 +1,7 @@
 <template>
     <div class="table-responsive">
         <table class="table table-borderless table-sm">
-                <tbody class="table-group-divider" v-for="(match,index) in matches" :key="index">
-                    
+                <tbody class="table-group-divider" v-for="(match,index) in matches" :key="index">                    
                     <tr class="matchStage" v-if="matchesStage != match.stage" :changeStage= setStage(match.stage)>
                         <td id="stage" colspan="12" class="text-center">
                             {{ match.stage.replace('_',' ') }}
@@ -13,7 +12,7 @@
                             {{getDate(match.utcDate)}}  
                         </td>                            
                     </tr>
-                    <tr class="text-center">
+                    <tr class="text-center my-5">
                         <td class="team align-middle">
                             <span class="d-flex nowrap text-highlight">
                                     <img class="mx-3" :src="match.homeTeam.crest" alt="Logo" width="24" height="24">
@@ -122,6 +121,10 @@
 </script>
 
 <style scoped>
+
+    table{
+        border-collapse: separate;
+    }
     .matchDate{
         background-color: var(--color-text-title);
         color: var(--color-text-light) ;
@@ -146,8 +149,8 @@
         font-size: 1.2em;
         background-color: var(--color-text-title);
         color: var(--color-text-light);
-        width: 40px;
-        border-radius: 20px;
+        width: 30px;
+        border-radius: 5px;
     }
 
     .versus{

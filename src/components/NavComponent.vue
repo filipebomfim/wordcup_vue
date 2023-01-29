@@ -11,19 +11,19 @@
             <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="/">Home</a>
+                        <router-link id="home" class="nav-link" href="/" active-class="active" exact-active-class="active" to="/">Home</router-link>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/teams">Teams</a>
+                        <router-link id="teams" class="nav-link" href="/teams" active-class="active" exact-active-class="active" to="/teams">Teams</router-link>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/group_stage">Group Stage</a>
+                        <router-link class="nav-link" href="/group_stage" id="group_stage" active-class="active" exact-active-class="active" to="/group_stage">Group Stage</router-link>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/playoffs">Playoffs</a>
+                        <router-link class="nav-link" href="/playoffs" id="playoffs" active-class="active" exact-active-class="active" to="/playoffs">Playoffs</router-link>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/wc-fifa">WC FIFA</a>
+                        <router-link class="nav-link" href="/wc-fifa" id="wc-fifa" active-class="active" exact-active-class="active" to="/wc-fifa">WC FIFA</router-link>
                     </li>
                 </ul>
             </div>
@@ -32,6 +32,7 @@
 </template>
 
 <script>
+
     export default{
         name: 'NavComponent'
     }
@@ -45,6 +46,10 @@
 
     .navbar-toggler{
         background-color: var(--color-text-light) !important;
+    }
+
+    .navbar, .container-fluid{
+        background-color: var(--color-background-3) !important;
     }
 
     .active{

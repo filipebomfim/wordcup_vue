@@ -87,8 +87,8 @@
 
 <style scoped>
     .champion{
-        background-color: white;
-        color: var(--color-text-title);
+        background-color: var(--color-background-2);
+        color: var(--color-text-light);
         font-size: 20px;
     }
 
