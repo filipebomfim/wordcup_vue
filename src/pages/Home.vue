@@ -1,3 +1,10 @@
+<!-- 
+    Author: Filipe Bomfim Santos Furtado
+    File: Home.vue
+    Description: 
+        Página inicial do projeto.
+ -->
+
 <template>
     <main class="container-fluid d-flex justify-content-center align-items-center">
         <div class="main-menu d-flex flex-column">
@@ -10,16 +17,17 @@
 
 <script>
     export default{
-        name:'Home'
+        /** Nome do Componente */
+        name:'Home',
     }
 </script>
 
 <style scoped>
     main{
-        background-image: url('../assets/img/qatar.jpg');
-        background-position: center; /* Center the image */
-        background-repeat: no-repeat; /* Do not repeat the image */
-        background-size: cover; /* Resize the background image to cover the entire container */
+        background-image: url('../assets/img/qatar.jpg'); 
+        background-position: center; 
+        background-repeat: no-repeat; 
+        background-size: cover; 
         width: 100%;
         height: 100vh;
         z-index: 0;
