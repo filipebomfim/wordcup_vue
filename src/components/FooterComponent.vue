@@ -1,3 +1,11 @@
+<!-- 
+    Author: Filipe Bomfim Santos Furtado
+    File: FooterComponent.vue
+    Description: 
+        Componente para a barra no rodapé do site.
+ -->
+
+
 <template>
     <footer class="fixed-bottom">
         <div class="conteiner-fluid d-flex justify-content-center align-items-center">
@@ -8,6 +16,7 @@
 
 <script>
     export default{
+        /** Nome do Componente */
         name:'FooterComponent'
     }
 </script>

@@ -1,7 +1,15 @@
+<!-- 
+    Author: Filipe Bomfim Santos Furtado
+    File: NavComponent.vue
+    Description: 
+        Componente para a barra de navegação do site.
+ -->
+
 <template>
     <nav class="navbar navbar-expand-lg fixed-top bg-body-tertiary">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">
+            <!-- Link para página principal através da logo -->
+            <a class="navbar-brand" href="/">
                 <img src="../assets/img/logo.png" alt="Logo" width="30" height="30" class="d-inline-block align-text-top">
                 Word Cup 2022
             </a>
@@ -9,6 +17,7 @@
             <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+                <!-- Links para páginas. É utilizado router-link como próprio utilitário do router-vue para ver qual página está ativa e alterar a cor do link ativo -->
                 <ul class="navbar-nav">
                     <li class="nav-item">
                         <router-link id="home" class="nav-link" href="/" active-class="active" exact-active-class="active" to="/">Home</router-link>
@@ -34,6 +43,7 @@
 <script>
 
     export default{
+        /** Nome do Componente */
         name: 'NavComponent'
     }
 </script>
@@ -53,7 +63,7 @@
     }
 
     .active{
-        color: var(--color-text-title) !important;
+        color: var(--color-background-2) !important;
     }
 
 
