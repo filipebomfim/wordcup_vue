@@ -1,5 +1,14 @@
+/**
+    Author: Filipe Bomfim Santos Furtado
+    File: api.js
+    Description: 
+        Configuração do axius para as requisições da api
+  */ 
+
+/** Importação do axios */
 import axios from 'axios'
 
+/** Criação do axios, contendo a url base da api e o token de autorização para as requisições */
 const api = axios.create({
     baseURL:'https://api.football-data.org/v4/competitions/WC',
     headers:{
@@ -8,25 +17,3 @@ const api = axios.create({
 })
 
 export default api;
-
-
-/**
- var axios = require('axios');
-
-var config = {
-  method: 'get',
-  url: 'https://v3.football.api-sports.io/{endpoint}',
-  headers: {
-    'x-rapidapi-key': 'XxXxXxXxXxXxXxXxXxXxXxXx',
-    'x-rapidapi-host': 'v3.football.api-sports.io'
-  }
-};
-
-axios(config)
-.then(function (response) {
-  console.log(JSON.stringify(response.data));
-})
-.catch(function (error) {
-  console.log(error);
-});
- */

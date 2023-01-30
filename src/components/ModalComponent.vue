@@ -1,16 +1,25 @@
+<!-- 
+    Author: Filipe Bomfim Santos Furtado
+    File: ModalComponent.vue
+    Description: 
+        Componente para exibição do modal nas páginas do site
+ -->
+
 <template>
-    <!-- Modal -->
     <div class="modal fade" id="modal" tabindex="-1" aria-labelledby="Modal" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
+                    <!-- Título do modal e slot header para qualquer outra informação que fique no header -->
                     <h1 class="modal-title fs-5" id="exampleModalLabel">{{title}}</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
+                    <!-- Slot de conteúdo do modal para exibibição das informações pertinentes das páginas -->
                     <slot name="content"></slot>
                 </div>
                 <div class="modal-footer">
+                    <!-- Slot de footer para informações a serem inseridas no rodapé do modal -->
                     <slot name="footer"></slot>
                 </div>
             </div>
@@ -20,11 +29,10 @@
 
 <script>
     export default {
+        /** Nome do Componente */
         name:'ModalComponent',
-        props:['title'],
-        mounted(){
-            
-        }
+        /** Título do modal passado como variável */
+        props:['title']
     }
 
 </script>
