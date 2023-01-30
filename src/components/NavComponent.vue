@@ -11,7 +11,7 @@
             <!-- Link para página principal através da logo -->
             <a class="navbar-brand" href="/">
                 <img src="../assets/img/logo.png" alt="Logo" width="30" height="30" class="d-inline-block align-text-top">
-                Word Cup 2022
+                Copa do Mundo 2022
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -23,13 +23,13 @@
                         <router-link id="home" class="nav-link" href="/" active-class="active" exact-active-class="active" to="/">Home</router-link>
                     </li>
                     <li class="nav-item">
-                        <router-link id="teams" class="nav-link" href="/teams" active-class="active" exact-active-class="active" to="/teams">Teams</router-link>
+                        <router-link id="teams" class="nav-link" href="/teams" active-class="active" exact-active-class="active" to="/selecoes">Seleções</router-link>
                     </li>
                     <li class="nav-item">
-                        <router-link class="nav-link" href="/group_stage" id="group_stage" active-class="active" exact-active-class="active" to="/group_stage">Group Stage</router-link>
+                        <router-link class="nav-link" href="/group_stage" id="group_stage" active-class="active" exact-active-class="active" to="/grupos">Fase de Grupos</router-link>
                     </li>
                     <li class="nav-item">
-                        <router-link class="nav-link" href="/playoffs" id="playoffs" active-class="active" exact-active-class="active" to="/playoffs">Playoffs</router-link>
+                        <router-link class="nav-link" href="/playoffs" id="playoffs" active-class="active" exact-active-class="active" to="/mata-mata">Mata-mata</router-link>
                     </li>
                     <li class="nav-item">
                         <router-link class="nav-link" href="/wc-fifa" id="wc-fifa" active-class="active" exact-active-class="active" to="/wc-fifa">WC FIFA</router-link>

@@ -1,6 +1,6 @@
 <!-- 
     Author: Filipe Bomfim Santos Furtado
-    File: Playoffs.vue
+    File: WCFifa.vue
     Description: 
         Página com as informações sobre os campeões das copas anteriores.
  -->
@@ -8,18 +8,18 @@
 <template>
     <div class="page">
         <!-- Carregamento do componente para o título da página -->
-        <PageTitleComponent :title="'History of FIFA World Cup'"></PageTitleComponent>
+        <PageTitleComponent :title="'História da WC FIFA'"></PageTitleComponent>
         <div class="container-fluid page-content mx-auto">
             <div class="search mb-5 d-flex justify-content-center">
                 <div class="mx-auto">
                     <!-- Carregamento do input para pesquisa -->
-                    <input class="form-control form-control-lg" v-model="search" type="search" placeholder="Search for Team or Year...">
+                    <input class="form-control form-control-lg" v-model="search" type="search" placeholder="Pesquisar por Seleção ou Ano...">
                 </div>
             </div>
             <div class="row">
                 <!-- Caso nenhum dado seja encontrado para ser exibido, exibe a informação -->
                 <div v-if="!searchseasons.length" class="no-array d-flex justify-content-center align-items-center mb-3">
-                    <p>No Data Found</p>
+                    <p>Nenhuma informação encontrada!</p>
                 </div>
                 <!-- Para cada Copa encontrada de acordo com o filtro, um componente Card é carregado para listagem das informações -->
                 <div v-else class="col-lg-3 col-md-6 col-12 px-0" v-for="(season,index) in searchseasons" :key="index" >
@@ -30,7 +30,7 @@
                             :src="require('../assets/img/wc-logos/'+getYear(season.startDate)+'.png')" alt="Logo" width="200" height="200">
                             <div class="champion d-flex justify-content-around align-items-center my-2">
                                 <span>
-                                    Champion
+                                    Campeão
                                 </span>
                                 <div class="d-flex align-items-center mx-2">
                                     <img class="me-2" :src="season.winner.crest" alt="Logo" width="24" height="24">
@@ -38,11 +38,11 @@
                                 </div>                                  
                             </div>
                             <div class="d-flex justify-content-around">
-                                <p>Start Date</p>
+                                <p>Data de Início</p>
                                 <p>{{ season.startDate }}</p>
                             </div>
                             <div class="d-flex justify-content-around">
-                                <p>End Date</p>
+                                <p>Data de Término</p>
                                 <p>{{ season.endDate }}</p>
                             </div>
                         </template>

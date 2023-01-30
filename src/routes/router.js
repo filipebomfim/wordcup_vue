@@ -21,15 +21,15 @@ const routes = [
         component:Home
     },
     {
-        path:'/group_stage',
+        path:'/grupos',
         component:GroupStage
     },
     {
-        path:'/teams',
+        path:'/selecoes',
         component: Teams
     },
     {
-        path:'/playoffs',
+        path:'/mata-mata',
         component: Playoffs
     },
     {

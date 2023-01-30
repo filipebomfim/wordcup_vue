@@ -15,7 +15,7 @@
                     -->                 
                     <tr class="matchStage" v-if="matchesStage != match.stage" :changeStage= setStage(match.stage)>
                         <td id="stage" colspan="12" class="text-center">
-                            {{ match.stage.replace('_',' ') }}
+                            {{ getTranslateStage(match.stage) }}
                         </td> 
                     </tr>
                     <!-- A informação da data da partida é exibida se a partida atual não pertencer à data atual 
@@ -58,7 +58,7 @@
                     <tr class="text-center penalties-match" v-if="match.score.duration == 'PENALTY_SHOOTOUT'">
                         <td class="align-middle">
                             <span class="d-flex nowrap text-highlight">
-                                    <span>Regular Time</span>
+                                    <span>Tempo Regulamentar</span>
                             </span>
                         </td>
                         <td>
@@ -71,7 +71,7 @@
                     <tr class="text-center penalties-match" v-if="match.score.duration == 'PENALTY_SHOOTOUT'">
                         <td class="align-middle">
                             <span class="d-flex nowrap text-highlight">
-                                    <span>Extra Time</span>
+                                    <span>Prorrogação</span>
                             </span>
                         </td>
                         <td>
@@ -84,7 +84,7 @@
                     <tr class="text-center penalties-match" v-if="match.score.duration == 'PENALTY_SHOOTOUT'">
                         <td class="align-middle">
                             <span class="d-flex nowrap text-highlight">
-                                    <span>Penalties</span>
+                                    <span>Penalidades</span>
                             </span>
                         </td>
                         <td>
@@ -100,6 +100,7 @@
 </template>
 
 <script>
+
     export default {
         /** Nome do Componente */
         name:'MatchesComponent',
@@ -115,6 +116,13 @@
             /** Função para retornar somente a data */
             getDate(matchDate){
                 return new Date(matchDate).toLocaleDateString('pt-BR')
+            },
+            getTranslateStage(stage){
+                return stage == 'GROUP_STAGE' ? 'FASE DE GRUPOS' : 
+                       stage == 'LAST_16' ? 'OITAVAS DE FINAL' :
+                       stage == 'QUARTER_FINALS' ? 'QUARTAS DE FINAL' :
+                       stage == 'SEMI_FINALS' ? 'SEMI FINAIS' :
+                       'FINAL';
             },
             /** Função para configurar a data da partida */
             setDate(matchDate){

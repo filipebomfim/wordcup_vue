@@ -9,8 +9,8 @@
     <main class="container-fluid d-flex justify-content-center align-items-center">
         <div class="main-menu d-flex flex-column">
             <img src="../assets/img/logo.png" alt="">
-            <a class="btn btn-primary my-2" href="/group_stage">Group Stage</a>
-            <a class="btn btn-primary" href="/wc-fifa">History WC FIFA</a>           
+            <a class="btn btn-primary my-2" href="/group_stage">Fase de Grupos</a>
+            <a class="btn btn-primary" href="/wc-fifa">História da WC FIFA</a>           
         </div>
     </main>
 </template>

@@ -7,7 +7,7 @@
 
 <template>
     <!-- Carregamento do componente para o título da página -->
-    <PageTitleComponent :title="'Playoffs'"></PageTitleComponent>
+    <PageTitleComponent :title="'Mata-mata'"></PageTitleComponent>
         <div class="container-fluid page-content mx-auto">
             <div class="row d-flex justify-content-center align-items-center">
                 <div class="col-md-6">

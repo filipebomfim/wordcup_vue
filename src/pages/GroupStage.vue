@@ -8,12 +8,12 @@
 <template>
     <div class="page">
         <!-- Carregamento do componente para o título da página -->
-        <PageTitleComponent :title="'Group Stage'"></PageTitleComponent>
+        <PageTitleComponent :title="'Fase de Grupos'"></PageTitleComponent>
         <div class="container-fluid page-content mx-auto">
             <div class="row">
                 <!-- Para cada grupo do torneio, um componente Card é carregado para listagem das informações -->
                 <div class="col-xl-3 col-md-6 col-12 px-0" v-for="(group,index) in groups" :key="index" >
-                    <CardComponent :title="group.group.replace('_',' ')" >
+                    <CardComponent :title="group.group.replace('GROUP_','GRUPO ')" >
                         <!-- Carregamento do conteúdo no slot header, para chamada do Modal que mostra as partidas do grupo -->
                         <template v-slot:header>
                             <!-- Link para cada grupo. Ao ser clicado, um novo grupo é selecionado. -->
@@ -30,7 +30,7 @@
                 </div> 
 
                 <!-- Carregamento do componente de Modal, para mostrar as partidas do grupo selecionado -->
-                <ModalComponent :title="'Matches from '+groupMatchName.replace('_',' ')">
+                <ModalComponent :title="'Partidas do '+groupMatchName.replace('GROUP_','GRUPO ')">
                     <!-- Carregamento do conteúdo no slot content, para organizar as partidas do grupo selecionado -->
                     <template v-slot:content>
                         <MatchesComponent :matches="groupMatches"></MatchesComponent>

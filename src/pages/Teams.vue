@@ -9,12 +9,12 @@
 <template>
     <div class="page">
         <!-- Carregamento do componente para o título da página -->
-        <PageTitleComponent :title="'Teams'"></PageTitleComponent>
+        <PageTitleComponent :title="'Seleções'"></PageTitleComponent>
         <div class="container-fluid page-content mx-auto">
             <div class="row d-flex justify-content-center align-items-center">
                 <div class="col-xl-3 col-md-4">
                     <!-- Carregamento do componente Card para listagem dos times do torneio -->
-                    <CardComponent :title="'World Cup Teams'">
+                    <CardComponent :title="'Seleções'">
                         <!-- Carregamento do conteúdo no slot content do Card, contendo a bandeira e o nome do time -->
                         <template v-slot:content>
                             <div class="row">
@@ -29,7 +29,7 @@
                 </div>
                 <div class="col-xl-6 col-md-8">
                     <!-- Carregamento do componente Card para listagem dos jogos dos times do torneio -->
-                    <CardComponent :title="selectedTeam.name ?? 'Select a Team'">
+                    <CardComponent :title="selectedTeam.name ?? 'Selecione uma Seleção'">
                         <!-- Carregamento do conteúdo no slot content do Card -->
                         <template v-slot:content>
                             <img :src="selectedTeam.crestUrl ?? require('@/assets/img/logo.png')" class="rounded mx-auto d-block" alt="" width="150" height="150">
