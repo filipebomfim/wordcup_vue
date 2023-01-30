@@ -19,6 +19,13 @@
 - [x] Histórico dos campeões de todas as Copas do Mundo
 - [x] Pesquisa por Campeão ou pelo ano da Copa do Mundo
 
+<p>
+    Desenvolvi o app de forma adaptada, pois a versão gratuita da API (https://www.football-data.org/) que utilizei, limita a quantidade requisições em 10 a cada minuto.  </p> 
+<p>
+    O histórico das copas não possui as logos de cada Copa do Mundo. Desta forma, busquei na internet as logos e adicionei ao projeto. Bem nostálgico!
+</p> 
+<hr>
+
 
 <h3 id="tecnologias">🛠 Tecnologias</h3>
 
@@ -29,6 +36,7 @@ As seguintes tecnologias foram usadas na construção do projeto:
 - Bootstrap 5
 - Javascript
 - Vue 3
+<hr>
 
 <h3 id="instalacao">🎲 Instalação</h3>
 
@@ -51,11 +59,13 @@ npm run serve
 ```
 npm run build
 ```
+<hr>
 
 
 <h3 id="autor">🦸 Autor</h3>
 
-Feito com carinho e dedicação por mim, rs. Filipe Bomfim 👋🏽 Entre em contato!
+Feito com carinho e dedicação por mim, rs. Filipe Bomfim 👋🏽 Espero que gostem! 
+Entre em contato!
 
 [![Gmail Badge](https://img.shields.io/badge/-Filipe-c14438?style=flat-square&logo=Gmail&logoColor=white&link=mailto:filipebomfim.dev@gmail.com)](mailto:filipebomfim.dev@gmail.com)
 [![Linkedin Badge](https://img.shields.io/badge/-Filipe-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/filipe-bomfim-931256224/)](https://www.linkedin.com/in/filipe-bomfim-931256224/)
