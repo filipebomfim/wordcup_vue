@@ -39,11 +39,11 @@
                             </div>
                             <div class="d-flex justify-content-around">
                                 <p>Data de Início</p>
-                                <p>{{ season.startDate }}</p>
+                                <p>{{ getDate(season.startDate) }}</p>
                             </div>
                             <div class="d-flex justify-content-around">
                                 <p>Data de Término</p>
-                                <p>{{ season.endDate }}</p>
+                                <p>{{ getDate(season.endDate) }}</p>
                             </div>
                         </template>
                     </CardComponent> 
@@ -92,7 +92,11 @@
                 return this.seasons.filter((season)=>{
                     return season.winner.name.includes(this.search) || this.getYear(season.startDate).toString().includes(this.search);
                 });
-            }
+            },
+            /** Função para retornar a data formatada */
+            getDate(matchDate){
+                return new Date(matchDate).toLocaleDateString('pt-BR')
+            },
         },
         mounted(){
             /** Vai no endpoint para pegar os dados de todas as Copas do Mundo, as quais já tenham um vencedor informado pela api
