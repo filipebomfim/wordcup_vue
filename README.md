@@ -4,6 +4,13 @@
 <p align="center">App que mostra as informações sobre a Copa do Mundo de 2022 no Qatar, assim como um histórico dos campeões de outras copas, a partir do consumo da versão gratuita de uma api. Projeto foi desenvolvido para estudo do VueJS. </p>
 
 
+![home](https://user-images.githubusercontent.com/38573324/216131202-ec44a1c7-23e8-4bcb-8811-236acf7792ba.png)
+![groups](https://user-images.githubusercontent.com/38573324/216131370-c0555502-e316-47f5-b836-78d657056f85.png)
+![teams](https://user-images.githubusercontent.com/38573324/216131401-87715413-5901-4621-9dc4-33ec0c78bb57.png)
+![playoffs](https://user-images.githubusercontent.com/38573324/216131421-9eb91c39-ca8b-4ef8-9a8f-3cf88de07807.png)
+![wc-fifa](https://user-images.githubusercontent.com/38573324/216131451-ab0c0924-dd6b-4e9d-9d5d-c6d8c4b47378.png)
+
+
 <p align="center">
  <a href="#features">Funcionalidades</a> •
  <a href="#tecnologias">Tecnologias</a> •
